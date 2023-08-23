@@ -1,6 +1,6 @@
 # Fastly VCL language linter
 
-This is the [`doramatadora/falco`](https://github.com/doramatadora/falco) fork of Yoshiaki Sugimoto's [`falco`](https://github.com/ysugimoto/falco), repackaged for distribution with npm.
+[`falco`](https://github.com/ysugimoto/falco), repackaged for distribution with npm.
 
 **JSON output only!**
 
@@ -28,9 +28,9 @@ lint('/Absolute/path/to/some.vcl')
       Infos: suggestionCount,
       Warnings: warningCount,
       Errors: errorCount,
-    LintErrors,
+      LintErrors,
       ParseErrors,
-    VCL
+      VCL
     } = jsonLintResults
     // ...
   })
@@ -45,7 +45,7 @@ falco-js -vv /path/to/file.vcl
 falco-js -help
 ```
 
-#### Secret pipe mode (-slurp arg)
+#### Pipeable (-slurp arg)
 
 ```sh
 cat /path/to/file.vcl | falco-js -slurp
