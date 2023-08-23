@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: 18.x
           registry-url: https://registry.npmjs.org
+      - run: make falco
       - uses: actions/setup-go@v4
         with:
-          go-version-file: falco/go.mod
-      - run: make falco
+          go-version-file: falco/go.modx
       - run: npm version ${{github.ref_name}} --allow-same-version
       - run: npm publish
         
