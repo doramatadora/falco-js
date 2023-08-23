@@ -19,6 +19,9 @@ jobs:
         with:
           go-version: '1.20'
       - run: make falco
+      - run: |
+          git config --global user.email "dora@kalneus.com"
+          git config --global user.name "Dora Militaru"
       - run: npm version ${{github.ref_name}} --allow-same-version
       - run: npm publish
         
