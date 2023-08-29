@@ -70,7 +70,7 @@ const lintText = (text, { vclFileName, autoAddIncludes = true, diagnosticsOnly =
     await fs.writeFile(file, text)
     let lintResponse = await falco([...falcoFlags, file])
     if (vclFileName) {
-      lintResponse = lintResponse.replace(file, vclFileName)
+      lintResponse = lintResponse.replaceAll(file, vclFileName)
     }
     if (!deserialize) {
       return lintResponse
